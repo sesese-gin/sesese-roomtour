@@ -852,3 +852,26 @@ li{
     background-color: white;
     color: #333;
 }
+/* ホームに戻るボタンのデザイン */
+.home-btn {
+    display: inline-block; /* 箱の形にする */
+    padding: 10px 20px;    /* 内側の余白 */
+    background-color: #333; /* ボタンの色 */
+    color: #fff;           /* 文字の色 */
+    text-decoration: none; /* 下線を消す */
+    border-radius: 5px;    /* 角を丸くする */
+    font-weight: bold;
+    
+    /* 位置の調整（画面の左上に固定する場合） */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100; /* 一番手前に表示 */
+    
+    /* ホバー時の動き */
+    transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #555; /* マウスを乗せた時の色 */
+}
