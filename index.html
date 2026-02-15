@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size of Life - My Room</title>
+    <link rel="stylesheet" href="style-game.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <img src="game-image/room.jpg" class="room-bg" alt="私の部屋" width="700">
+
+        <div class="click-area door-to-hallway" onclick="location.href='index-game-senter.html'"></div>
+        <div class="click-area roomleft-button" onclick="location.href='roomleft.html'"></div>
+        <div class="click-area roomlight-button" onclick="location.href='roomlight.html'"></div>
+
+        <img src="game-image/arrow.png" class="arrow-leftroom" alt="左へ移動" onclick="location.href='roomleft.html'">
+        <img src="game-image/arrow.png" class="arrow-rightroom" alt="右へ移動" onclick="location.href='roomlight.html'">
+
+        <div class="click-area pikachu" onclick="findItem('has_pikachu')"></div>
+        
+
+        <div class="message-box">
+            <p id="text">部屋の中を探索してください...</p>
+        </div>
+    </div>
+
+    <script>
+        // メッセージボックスの文字を書き換える魔法
+        function showMessage(text) {
+            document.getElementById('text').innerText = text;
+        }
+    </script>
+
+    <button class="collection-btn" onclick="openCollection()">📦 コレクション</button>
+
+    <button class="home-btn" onclick="location.href='../index.html'">🏠 Homeに戻る</button>
+
+   <div id="collection-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>COLLECTION</h2>
+        
+            <div class="collection-grid">
+
+            <div id="slot-pc" class="slot locked" onclick="ifUnlocked('has_pc')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-plant" class="slot locked" onclick="ifUnlocked('has_plant')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-mouse" class="slot locked" onclick="ifUnlocked('has_mouse')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-cup" class="slot locked" onclick="ifUnlocked('has_cup')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-cd" class="slot locked" onclick="ifUnlocked('has_cd')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-manga" class="slot locked" onclick="ifUnlocked('has_manga')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-wax" class="slot locked" onclick="ifUnlocked('has_wax')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-bag1" class="slot locked" onclick="ifUnlocked('has_bag1')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-bag2" class="slot locked" onclick="ifUnlocked('has_bag2')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-mirror" class="slot locked" onclick="ifUnlocked('has_mirror')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-kutusita" class="slot locked" onclick="ifUnlocked('has_kutusita')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-poster" class="slot locked" onclick="ifUnlocked('has_poster')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-books" class="slot locked" onclick="ifUnlocked('has_books')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-TV" class="slot locked" onclick="ifUnlocked('has_TV')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-okimono" class="slot locked" onclick="ifUnlocked('has_okimono')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-miku" class="slot locked" onclick="ifUnlocked('has_miku')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-temari" class="slot locked" onclick="ifUnlocked('has_temari')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-sugatami" class="slot locked" onclick="ifUnlocked('has_sugatami')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-sentaku" class="slot locked" onclick="ifUnlocked('has_sentaku')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-kaban" class="slot locked" onclick="ifUnlocked('has_kaban')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-amplifier" class="slot locked" onclick="ifUnlocked('has_amplifier')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-bass" class="slot locked" onclick="ifUnlocked('has_bass')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-closet" class="slot locked" onclick="ifUnlocked('has_closet')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-sikisi" class="slot locked" onclick="ifUnlocked('has_sikisi')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-cds" class="slot locked" onclick="ifUnlocked('has_cds')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-kihon" class="slot locked" onclick="ifUnlocked('has_kihon')"><img src="game-image/question.png" alt="?"></div>
+            <div id="slot-pikachu" class="slot locked" onclick="ifUnlocked('has_pikachu')"><img src="game-image/question.png" alt="?"></div>
+
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button onclick="closeCollection()">閉じる</button>
+                <br><br>
+                <button onclick="resetGame()" style="background:#555; color:white; font-size:12px;">データリセット</button>
+            </div>
+        </div>
+    </div>
+
+   
+
+
+
+<div id="item-detail-modal" class="modal hidden" onclick="closeDetail()">
+    <div class="modal-content detail-layout" onclick="event.stopPropagation()">
+        
+        <div class="detail-left">
+            <img id="detail-img" src="" alt="アイテム画像">
+        </div>
+        
+        <div class="detail-right">
+            <h2 id="detail-name">アイテム名</h2>
+            <p id="detail-desc">ここに説明文が入ります。</p>
+            <button onclick="closeDetail()">閉じる</button>
+        </div>
+
+    </div>
+</div>
+
+ <script src="script.js"></script>
+
+ <div id="collection-modal" class="modal hidden">
+    </div>
+
+<div id="item-detail-modal" class="modal hidden" onclick="closeDetail()">
+    </div>
+
+    <div id="complete-modal" class="modal hidden">
+    <div class="modal-content" style="border: 5px solid gold; background-color: #fff;">
+        <h2 style="color: gold; text-shadow: 1px 1px 0 #000;">🎉 CONGRATULATIONS! 🎉</h2>
+        <p>すべてのアイテムを見つけました！</p>
+        <p>あなたの部屋への愛が証明されました。</p>
+        <br>
+        <img src="game-image/item_v.jpg" alt="ご褒美画像" style="width: 200px; border-radius: 50%;">
+        <br><br>
+        <button onclick="closeComplete()">閉じる</button>
+        <button onclick="resetGame()">最初から遊ぶ</button>
+    </div>
+</div>
+
+</body>
+</html>
