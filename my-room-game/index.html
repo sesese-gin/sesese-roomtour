@@ -9,20 +9,18 @@
 <body>
 
     <div class="game-container">
-        <img src="game-image/roomleft.jpg" class="room-bg" alt="私の部屋" width="700">
+        <img src="game-image/room.jpg" class="room-bg" alt="私の部屋" width="700">
 
-        <div class="click-area back-home-button" onclick="location.href='index.html'"></div>
-        <img src="game-image/arrow.png" class="arrow-back-home" alt="ホームへ移動" onclick="location.href='index.html'">
+        <div class="click-area door-to-hallway" onclick="location.href='index-game-senter.html'"></div>
+        <div class="click-area roomleft-button" onclick="location.href='roomleft.html'"></div>
+        <div class="click-area roomlight-button" onclick="location.href='roomlight.html'"></div>
 
-        <div class="click-area wax" onclick="findItem('has_wax')"></div>
-        <div class="click-area bag1" onclick="findItem('has_bag1')"></div>
-        <div class="click-area bag2" onclick="findItem('has_bag2')"></div>
-        <div class="click-area mirror" onclick="findItem('has_mirror')"></div>
-        <div class="click-area kutusita" onclick="findItem('has_kutusita')"></div>
-        <div class="click-area poster" onclick="findItem('has_poster')"></div>
-        <div class="click-area books" onclick="findItem('has_books')"></div>
+        <img src="game-image/arrow.png" class="arrow-leftroom" alt="左へ移動" onclick="location.href='roomleft.html'">
+        <img src="game-image/arrow.png" class="arrow-rightroom" alt="右へ移動" onclick="location.href='roomlight.html'">
+
+        <div class="click-area pikachu" onclick="findItem('has_pikachu')"></div>
         
-        
+
         <div class="message-box">
             <p id="text">部屋の中を探索してください...</p>
         </div>
@@ -37,11 +35,13 @@
 
     <button class="collection-btn" onclick="openCollection()">📦 コレクション</button>
 
+    <button class="home-btn" onclick="location.href='../index.html'">🏠 Homeに戻る</button>
+
    <div id="collection-modal" class="modal hidden">
         <div class="modal-content">
             <h2>COLLECTION</h2>
-
-             <div class="collection-grid">
+        
+            <div class="collection-grid">
 
             <div id="slot-pc" class="slot locked" onclick="ifUnlocked('has_pc')"><img src="game-image/question.png" alt="?"></div>
             <div id="slot-plant" class="slot locked" onclick="ifUnlocked('has_plant')"><img src="game-image/question.png" alt="?"></div>
@@ -81,26 +81,29 @@
         </div>
     </div>
 
-    
+   
 
 
-    <div id="item-detail-modal" class="modal hidden" onclick="closeDetail()">
-        <div class="modal-content detail-layout" onclick="event.stopPropagation()">
-            
-            <div class="detail-left">
-                <img id="detail-img" src="" alt="アイテム画像">
-            </div>
-            
-            <div class="detail-right">
-                <h2 id="detail-name">アイテム名</h2>
-                <p id="detail-desc">ここに説明文が入ります。</p>
-                <button onclick="closeDetail()">閉じる</button>
-            </div>
 
+<div id="item-detail-modal" class="modal hidden" onclick="closeDetail()">
+    <div class="modal-content detail-layout" onclick="event.stopPropagation()">
+        
+        <div class="detail-left">
+            <img id="detail-img" src="" alt="アイテム画像">
         </div>
-    </div>
+        
+        <div class="detail-right">
+            <h2 id="detail-name">アイテム名</h2>
+            <p id="detail-desc">ここに説明文が入ります。</p>
+            <button onclick="closeDetail()">閉じる</button>
+        </div>
 
-    <div id="collection-modal" class="modal hidden">
+    </div>
+</div>
+
+ <script src="script.js"></script>
+
+ <div id="collection-modal" class="modal hidden">
     </div>
 
 <div id="item-detail-modal" class="modal hidden" onclick="closeDetail()">
@@ -118,8 +121,6 @@
         <button onclick="resetGame()">最初から遊ぶ</button>
     </div>
 </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
