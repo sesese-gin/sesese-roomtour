@@ -15,7 +15,7 @@ const itemData = {
     'has_kutusita': { name: '靴下たち',image: 'game-image/item_kutusita.jpg',desc: '欲しい時にないのでここに置いてる。他人の目なんて気にしない' },
     'has_poster': {name: 'デクのポスター',image: 'game-image/item_poster.jpg',desc: 'ヒロアカ原画展で買ったポスター。部屋にインパクトを与えてくれる' },
     'has_books': {name: '積み上げられた本', image: 'game-image/item_books.jpg',desc: '乱雑に置かれた本たち、読む本と読まない本が織りなしている作品' },
-    'has_TV': { name: 'テレビ',image: 'game-image/item_tv.jpg', desc: 'YouTubeやアニメを見るための専用機。初めてのバイト代で購入した'   },
+    'has_TV': { name: 'テレビ',image: 'game-image/item_TV.jpg', desc: 'YouTubeやアニメを見るための専用機。初めてのバイト代で購入した'   },
     'has_okimono': {name: '緑たち', image: 'game-image/item_okimono.jpg',desc: '緑のフィギュアや植物たち。韓国で買った車、メガバンギラス、10円で買ったザクⅠ' },
     'has_miku': { name: '初音ミクのフィギュア',image: 'game-image/item_miku.jpg',desc: 'ガンダムコラボのミク、隣にいるのはポケモンの身代わり人形'},
     'has_temari': { name: '月村手毬', image: 'game-image/item_temari.jpg',desc: '学園アイドルマスターの月村手毬、推しだからといってむやみにグッズを買わないようにしている' },
@@ -26,7 +26,7 @@ const itemData = {
     'has_bass': { name: '愛用のベース', image: 'game-image/item_bass.jpg', desc: 'やめたりやったり継続的に練習ができないため一向に上手くならない' },
     'has_closet': { name: 'クローゼット', image: 'game-image/item_closet.jpg', desc: '主にアウターがかかっている。黒ばっかで色味に欠けている' },
     'has_sikisi': { name: 'サイン色紙',image: 'game-image/item_sikisi.jpg',desc: 'ジャンプの抽選で当選した色紙、早く連載して先生'  },
-    'has_cds': {name: 'CDコレクション', image: 'game-image/item_cds.jpg', desc: 'サブスク時代にあえて円盤で持っておきたい名盤たち。逆張りの賜物。' },
+    'has_cds': {name: 'CDコレクション', image: 'game-image/item_CDs.jpg', desc: 'サブスク時代にあえて円盤で持っておきたい名盤たち。逆張りの賜物。' },
     'has_kihon': { name: '基本情報の参考書', image: 'game-image/item_kihon.jpg', desc: '分厚い技術書。買う前に一回読んだだけ。折り目はまだない' },
     'has_pikachu': { name: 'ピカチュウ', image: 'game-image/item_pikachu.jpg', desc: '衝動買いしたキモすぎるピカチュウ。部屋を守ってくれている' }
     
